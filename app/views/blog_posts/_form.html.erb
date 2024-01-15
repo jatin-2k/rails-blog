@@ -1,0 +1,29 @@
+<div class="form-container">
+    <h2>Create/Edit Blog Post </h2>
+    <hr class="solid">
+
+    <%= form_with model: post do |form| %>
+        <%= form.label :title %>
+        <%= form.text_field :title, class: form.object.errors[:title].present? ? 'field-with-error' : '' %>
+
+        <%= form.label :body %>
+        <%= form.text_area :body, class: form.object.errors[:body].present? ? 'field-with-error' : '' %>
+
+        <%= form.submit %>
+        
+        <% if form.object.errors.any? %>
+        <div id="error_explanation">
+            <h2><%= pluralize(form.object.errors.count, "error") %> prohibited this post from being saved:</h2>
+            <ul>
+            <% form.object.errors.full_messages.each do |message| %>
+                <li><%= message %></li>
+            <% end %>
+            </ul>
+        </div>
+        <% end %>
+    <% end %>
+
+    <% if post.persisted? %>
+        <%= button_to 'Delete', blog_post_path(post), method: :delete, class: 'delete-button', data: {turbo_confirm: "Are you sure?"} %>
+    <% end %>
+</div>

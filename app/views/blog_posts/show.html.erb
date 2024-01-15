@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    body {
+      font-family: 'Arial', sans-serif;
+      background-color: #f4f4f4;
+      margin: 20px;
+    }
+
+    header {
+      background: linear-gradient(to right, #4CAF50, #2196F3);
+      color: white;
+      padding: 15px;
+      text-align: center;
+      font-size: 24px;
+      margin-bottom: 20px;
+    }
+
+    a {
+      color: #333;
+    }
+
+    a:visited {
+      color: #333;
+    }
+
+    h2 {
+      color: #333;
+      text-decoration: underline;
+    }
+
+    .single-post {
+      background-color: #fff;
+      border-radius: 8px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      margin-bottom: 20px;
+      padding: 20px;
+      text-align: center;
+    }
+
+    .single-post h2 {
+      color: #333;
+      margin-bottom: 10px;
+    }
+
+    .single-post p {
+      color: #555;
+    }
+  </style>
+  <title><%= @post.title %></title>
+</head>
+<body>
+  <header>
+  <h1>Our Awesome Blog</h1>
+</header>
+
+  <div class="single-post">
+    <h2><%= link_to "#{@post.title} ✎ ", edit_blog_post_path(@post) %> </h2>
+    <p><%= @post.body %></p>
+  </div>
+</body>
+</html>

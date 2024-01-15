@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    body {
+      font-family: 'Arial', sans-serif;
+      background-color: #f4f4f4;
+      margin: 20px;
+    }
+
+    header {
+      background: linear-gradient(to right, #4CAF50, #2196F3);
+      color: white;
+      padding: 15px;
+      text-align: center;
+      font-size: 28px; /* Increase font size for header */
+    }
+
+    h2 {
+      text-align: center;
+      color: #333; /* Darken text color */
+    }
+
+    hr.solid {
+      border-top: 3px solid #4CAF50;
+      margin-bottom: 20px;
+    }
+
+    .form-container {
+      background-color: #fff;
+      border-radius: 8px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      margin: 20px auto;
+      padding: 20px;
+      max-width: 600px;
+    }
+
+    form {
+      display: flex;
+      flex-direction: column;
+    }
+
+    label {
+      font-weight: bold;
+      margin-bottom: 8px;
+      color: #333; /* Darken text color */
+    }
+
+    input:not([type="submit"]),
+    textarea {
+      padding: 10px;
+      margin-bottom: 16px;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      width: calc(100% - 22px); /* Adjust the width as needed */
+    }
+
+    input[type="submit"] {
+      background: linear-gradient(to right, #4CAF50, #2196F3);
+      color: white;
+      padding: 12px;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+      font-size: 16px;
+      transition: background-color 0.3s; /* Add a smooth transition */
+    }
+
+    input[type="submit"]:hover {
+      background-color: #45a049;
+    }
+
+    .delete-button {
+        background: linear-gradient(to right, #f44336, #ff9800);
+        color: white;
+        padding: 12px;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+        font-size: 16px;
+        transition: background-color 0.3s; /* Add a smooth transition */
+        margin-top: 10px;
+    }
+
+    #error_explanation {
+      color: red;
+      margin-top: 20px; /* Add more space between form and error messages */
+    }
+
+    #error_explanation h2 {
+      font-size: 20px; /* Increase font size for error messages */
+      margin-bottom: 10px;
+    }
+
+    #error_explanation ul {
+      list-style-type: none;
+      padding: 0;
+    }
+
+    #error_explanation li {
+      margin-bottom: 5px;
+    }
+  </style>
+  <title>Create/Edit Blog Post</title>
+</head>
+<body>
+  <header>
+    <h1>Our Awesome Blog</h1>
+  </header>
+
+  <%= render partial: "form", locals: {post: @post}%>
+
+</body>
+</html>
